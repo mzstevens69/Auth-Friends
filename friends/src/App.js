@@ -1,24 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
-import Login from './components/Login';
+import {Login} from './components/Login';
+
 import PrivateRoute from './components/PrivateRoute'
 import './App.css';
+import { Dash } from './components/Dash';
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <ul>
-        <li>
+      <h1>Friends</h1>
+      
+        <span>
           <Link to='/login'>Log In</Link>
-        </li>
-        <li>
-          <link to='/protected'>Friends</link>
-        </li>
-      </ul>
+        </span>
+        <span>
+          <Link to='/dash'>Friends</Link>
+        </span>
+      
       <Switch>
-        <PrivateRoute path='/protected' component={Friends}/>
-        <Route path='Login' component={Login}/>
+        <PrivateRoute exact path='/dash' 
+        component={Dash} />
+        <Route  path='/login' component={Login}/>
         <Route component={Login}/>
       </Switch>
     </div>

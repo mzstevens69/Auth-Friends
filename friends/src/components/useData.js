@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export const useData = () => {
-    const [data, setData] = useState([])
+
+    const [data, setData] = useState([]);
+
     useEffect(() => {
         axios 
             .get('http://localhost:5000/api/friends')
@@ -14,3 +16,4 @@ export const useData = () => {
     }, [])
 
     return [data];
+}
