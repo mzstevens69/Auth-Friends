@@ -18,6 +18,7 @@ const handleChange = e => {
     
 const handleSubmit = e => {
     e.preventDefault();
+    console.log('the data', data);
     axiosWithAuth()
     .post('/login', data)
     .then(res => {

@@ -52,7 +52,7 @@ export const EditFriend = ({friend, deleteFriend, friendEdit }) => {
                 value={editFriend.email}
                 placeholder='Email'
                 />
-
+                <button type='submit' >Submit</button>
     </form>} 
         
     

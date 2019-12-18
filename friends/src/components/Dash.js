@@ -16,7 +16,7 @@ export const Dash = () => {
 
     const friendEdit = friend => {
         axiosWithAuth()
-        .put(`/friends${friend.id}`, friend )
+        .put(`/friends/${friend.id}`, friend)
         .then(res => {
             setFriends(res.data)
         })
@@ -47,7 +47,7 @@ export const Dash = () => {
     return (
         <div>
             <AddFriend addFriend={addFriend}/>
-            {friends && friends.map(friend => (
+        {friends.map(friend => (
                 <EditFriend
                     key={friend.id}
                     friend={friend}
